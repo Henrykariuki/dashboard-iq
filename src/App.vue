@@ -7,15 +7,15 @@ import SalesGrid from './components/SalesGrid.vue';
 </script>
 
 <template>
-  <div class="flex">
-    <div>
+  <div class="flex h-screen overflow-hidden">
+    <div class=" h-full">
       <LeftPanel></LeftPanel>
     </div>
-    <div class="grow">
+    <div class="grow overflow-auto bg-indigo-50">
       <header>
         <MyHeader></MyHeader>
       </header>
-      <main>
+      <main class="h-full ">
         <IncomeGrid></IncomeGrid>
         <SalesGrid></SalesGrid>
       </main>
