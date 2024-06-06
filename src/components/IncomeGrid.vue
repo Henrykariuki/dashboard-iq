@@ -1,55 +1,32 @@
 <script setup>
 import BarChart from './BarChart.vue';
 import PieChart from './PieChart.vue';
-import { Plus, ArrowUp, ArrowDown } from 'lucide-vue-next';
+
+import { ref } from 'vue';
+import StatCard from './StatCard.vue';
+
+const stats = ref([
+    {
+        title: 'Sales', value: 120, changePercentage: 12, positivechange: true, 
+    },
+    {
+        title: 'Revenue', value: 4500, changePercentage: 20, positivechange: true, 
+    },
+    {
+        title: 'Visitors', value: 360, changePercentage: 24, positivechange: false, 
+    },
+    {
+        title: 'Stock', value: 164, changePercentage: 30, positivechange: true, 
+    }
+])
 </script>
 <template>
     <div class="revenue-grid mt-6 w-full px-8">
         <div class="grid grid-cols-4 gap-8">
-            <div class="rounded-lg bg-white h-40">
-                <div class=" ml-8 mt-4 flex flex-col justify-start">
-                    <p class="font-bold text-lg text-gray-600 mb-3">Sales</p>
-                    <p class="font-bold text-3xl mb-2">120</p>
-                    <div class="flex items-center text-green-600">
-                        <Plus size="13" />
-                        <p class="mr-1">12%</p>
-                        <ArrowUp size="13"/>
-                    </div>
-                </div>
-            </div>
-            <div class="rounded-lg bg-white h-40">
-                 <div class=" ml-8 mt-4 flex flex-col justify-start">
-                    <p class="font-bold text-lg text-gray-600 mb-3">Revenue</p>
-                    <p class="font-bold text-3xl mb-2">$4500</p>
-                    <div class="flex items-center text-green-600">
-                        <Plus size="13" />
-                        <p class="mr-1">20%</p>
-                        <ArrowUp size="13"/>
-                    </div>
-                </div>
-            </div>
-            <div class="rounded-lg bg-white h-40">
-                 <div class=" ml-8 mt-4 flex flex-col justify-start">
-                    <p class="font-bold text-lg text-gray-600 mb-3">Visitors</p>
-                    <p class="font-bold text-3xl mb-2">360</p>
-                    <div class="flex items-center text-red-600">
-                        <Plus size="13" />
-                        <p class="mr-1">24%</p>
-                        <ArrowDown size="13"/>
-                    </div>
-                </div>
-            </div>
-            <div class="rounded-lg bg-white h-40">
-                 <div class=" ml-8 mt-4 flex flex-col justify-start">
-                    <p class="font-bold text-lg text-gray-600 mb-3">Stock</p>
-                    <p class="font-bold text-3xl mb-2">164</p>
-                    <div class="flex items-center text-green-600">
-                        <Plus size="13" />
-                        <p class="mr-1">30%</p>
-                        <ArrowUp size="13"/>
-                    </div>
-                </div>
-            </div>
+            <StatCard v-for="(stat, index) in stats" :key="index" :stats="stat"/>
+            
+            
+           
             <BarChart></BarChart>
             <PieChart></PieChart>
         </div>
