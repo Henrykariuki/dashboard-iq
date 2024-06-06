@@ -50,7 +50,7 @@ const topProducts = [
                             <div class="flex justify-start w-32">
                                 <div class=" flex items-center text-xs px-1 py-1 text-white font-semibold rounded-lg " :class="product.backgroundColor">{{ product.status }}</div>
                             </div>
-                            <button class="border border-indigo-500 p-3 flex items-center rounded-full focus:ring-2 ring-indigo-300"><component :is="product.icon" size="16" class="text-indigo-500 "/></button>
+                            <button class="border border-indigo-500 p-3 flex items-center rounded-full focus:ring-2 ring-indigo-300"><component :is="product.icon" size="16" class="text-indigo-500 cursor-pointer"/></button>
                         </div>
                     </div>
                 </div>

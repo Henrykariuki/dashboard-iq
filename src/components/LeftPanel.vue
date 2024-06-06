@@ -13,6 +13,12 @@ import {
     ShieldQuestion, Phone, Plus, ShoppingCart, History, AlignLeft, ChevronDown
 } from 'lucide-vue-next';
 
+import { inject } from 'vue';
+
+const isMenuOpen = inject('isMenuOpen');
+
+
+
 const  FirstSection = [
     {number: 1, name: 'Home', icon: Home},
     {number: 2, name: 'Banking', icon: Image}
@@ -99,7 +105,7 @@ const  TenthSection = [
 ]
 </script>
 <template>
-    <div class=" h-full  w-64">
+    <div v-if="isMenuOpen" class=" duration-500 h-full  w-64">
         <div class="h-20  text-xl w-full flex items-center justify-center font-medium text-indigo-500">
             DASHBOARD-IQ
         </div>
