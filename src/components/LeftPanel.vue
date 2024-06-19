@@ -20,8 +20,8 @@ const isMenuOpen = inject('isMenuOpen');
 
 
 const  FirstSection = [
-    {number: 1, name: 'Home', icon: Home},
-    {number: 2, name: 'Banking', icon: Image}
+    {number: 1, name: 'Home', icon: Home, path: '/'},
+    {number: 2, name: 'Banking', icon: Image, path: '/banking'}
 ]
 
 const  SecondSection = [
@@ -112,9 +112,13 @@ const  TenthSection = [
         <div class="overflow-y-auto h-full ">
             <div class="h-auto w-full  pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">DASHBOARDS</p>
-                <div v-for="(button, index) in FirstSection" :key="button.number" class="pl-6 cursor-pointer hover:bg-gray-100 duration-75 flex h-11 items-center mb-2 ">
-                    <component :is="button.icon" size="16" color="#3F51B5"/><p class="ml-3 text-gray-600">{{ button.name }}</p>
-                </div>  
+                
+                 <RouterLink v-for="(button, index) in FirstSection" :key="button.number" :to="button.path">
+                    <div  class="pl-6 cursor-pointer hover:bg-gray-100 duration-75 flex h-11 items-center mb-2 ">
+                        <component :is="button.icon" size="16" color="#3F51B5"/>
+                        <p class="ml-3 text-gray-600">{{ button.name }}</p>
+                    </div>
+                </RouterLink>     
             </div>
             <div class="h-auto w-full pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">APPS</p>

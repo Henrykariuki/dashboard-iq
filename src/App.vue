@@ -4,6 +4,7 @@ import LeftPanel from './components/LeftPanel.vue';
 import MyHeader from './components/MyHeader.vue'
 import SalesGrid from './components/SalesGrid.vue';
 import { ref, provide } from 'vue';
+import { RouterView } from 'vue-router';
 
 const isMenuOpen = ref(true)
 
@@ -27,8 +28,7 @@ provide('toggleMenu', toggleMenu);
         <MyHeader></MyHeader>
       </header>
       <main class="h-full ">
-        <IncomeGrid></IncomeGrid>
-        <SalesGrid></SalesGrid>
+        <RouterView></RouterView>
       </main>
     </div>
   </div>
