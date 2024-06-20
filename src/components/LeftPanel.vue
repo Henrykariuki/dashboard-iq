@@ -25,31 +25,35 @@ const  FirstSection = [
 ]
 
 const  SecondSection = [
-    {number: 1, name: 'Blog', icon: MessageCircle, hasButton: true},
-    {number: 2, name: 'calender', icon: Calendar, hasButton: false},
-    {number: 3, name: 'Chat', icon: MessagesSquare, hasButton: false},
-    {number: 4, name: 'File', icon: Folder, hasButton: false},
-    {number: 5, name: 'Mail', icon: Mail, hasButton: true},
-    {number: 6, name: 'Task List', icon: SquareCheckBig, hasButton: false}
+    {number: 1, name: 'Blog', icon: MessageCircle, hasButton: true, path: '/apps-blog'},
+    {number: 2, name: 'calender', icon: Calendar, hasButton: false, path: '/apps-calender'},
+    {number: 3, name: 'Chat', icon: MessagesSquare, hasButton: false, path: '/apps-chat'},
+    {number: 4, name: 'File', icon: Folder, hasButton: false, path: '/apps-file'},
+    {number: 5, name: 'Mail', icon: Mail, hasButton: true, path: '/apps-mail'},
+    {number: 6, name: 'Task List', icon: SquareCheckBig, hasButton: false, path: '/apps-tasklist'}
 ]
 
+
+
+
+
 const  ThirdSection = [
-    {number: 1, name: 'Form Layout', icon: NotebookText},
-    {number: 2, name: 'Input', icon: SquareCheckBig},
-    {number: 3, name: 'Float Label', icon: Bookmark},
-    {number: 4, name: 'Invalid State', icon: CircleAlert},
-    {number: 5, name: 'Button', icon: Box},
-    {number: 6, name: 'Table', icon: Grid2X2},
-    {number: 7, name: 'List', icon: List},
-    {number: 8, name: 'Tree', icon: Share2},
-    {number: 9, name: 'Panel', icon: PanelBottomDashed},
-    {number: 10, name: 'Overlay', icon: Layers2},
-    {number: 11, name: 'Media', icon: Images},
-    {number: 12, name: 'Menu', icon: Menu},
-    {number: 13, name: 'message', icon: MessageCircle},
-    {number: 14, name: 'File', icon: File},
-    {number: 15, name: 'Chart', icon: BarChart3},
-    {number: 16, name: 'Misc', icon: Circle}
+    {number: 1, name: 'Form Layout', icon: NotebookText, path: '/ui-form'},
+    {number: 2, name: 'Input', icon: SquareCheckBig, path: '/ui-input'},
+    {number: 3, name: 'Float Label', icon: Bookmark, path: '/ui-label'},
+    {number: 4, name: 'Invalid State', icon: CircleAlert, path: '/ui-invalid'},
+    {number: 5, name: 'Button', icon: Box, path: '/ui-button'},
+    {number: 6, name: 'Table', icon: Grid2X2, path: '/ui-table'},
+    {number: 7, name: 'List', icon: List, path: '/ui-list'},
+    {number: 8, name: 'Tree', icon: Share2, path: '/ui-tree'},
+    {number: 9, name: 'Panel', icon: PanelBottomDashed, path: '/ui-panel'},
+    {number: 10, name: 'Overlay', icon: Layers2, path: '/ui-overlay'},
+    {number: 11, name: 'Media', icon: Images, path: '/ui-media'},
+    {number: 12, name: 'Menu', icon: Menu, path: '/ui-menu'},
+    {number: 13, name: 'message', icon: MessageCircle, path: '/ui-message'},
+    {number: 14, name: 'File', icon: File, path: '/ui-file'},
+    {number: 15, name: 'Chart', icon: BarChart3, path: '/ui-chart'},
+    {number: 16, name: 'Misc', icon: Circle, path: '/ui-misc'}
 ]
 
 const  FourthSection = [
@@ -122,21 +126,21 @@ const  TenthSection = [
             </div>
             <div class="h-auto w-full pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">APPS</p>
-                <div v-for="(tag, index) in SecondSection" :key="tag.number" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75  h-11 items-center mb-2 ">
+                <RouterLink v-for="(tag, index) in SecondSection" :key="tag.number" :to="tag.path" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75  h-11 items-center mb-2 ">
                     <component :is="tag.icon" size="16" color="#3F51B5"/>
                     <div class="ml-3 flex justify-between items-center h-8 w-full">
                         <p class="text-gray-600">{{ tag.name }}</p>
                         <ChevronDown size="13px" v-if="tag.hasButton" class="mr-8"/>
                     </div>
-                </div>
+                </RouterLink>
                 
             </div>
             <div class="h-auto w-full  pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">UI KIT</p>
-                <div v-for="(button, index) in ThirdSection" :key="button.number" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75 h-11 items-center mb-2 ">
+                <RouterLink v-for="(button, index) in ThirdSection" :key="button.number" :to="button.path" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75 h-11 items-center mb-2 ">
                     <component :is="button.icon" size="16" color="#3F51B5"/>
                     <p class="ml-3 text-gray-600">{{ button.name }}</p>
-                </div>
+                </RouterLink>
             </div>
             <div class="h-auto w-full  pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">PRIME BLOCKS</p>
