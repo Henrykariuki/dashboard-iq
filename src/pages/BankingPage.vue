@@ -1,5 +1,8 @@
 <script setup>
+import Banking from '@/components/Banking.vue'
 </script>
 <template>
-    <div>Banking page</div>
+    <div>
+<Banking></Banking>
+    </div>
 </template>

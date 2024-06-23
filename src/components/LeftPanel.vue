@@ -20,7 +20,7 @@ const isMenuOpen = inject('isMenuOpen');
 
 
 const  FirstSection = [
-    {number: 1, name: 'Home', icon: Home, path: '/'},
+    {number: 1, name: 'E-Commerce', icon: Home, path: '/'},
     {number: 2, name: 'Banking', icon: Image, path: '/banking'}
 ]
 
@@ -57,45 +57,45 @@ const  ThirdSection = [
 ]
 
 const  FourthSection = [
-    {number: 1, name: 'Free Blocks', icon: Eye},
-    {number: 2, name: 'All Blocks', icon: Globe},
+    {number: 1, name: 'Free Blocks', icon: Eye, path: '/prime-freeblocks'},
+    {number: 2, name: 'All Blocks', icon: Globe, path: '/prime-allblocks'},
    
 ]
 
 const  FifthSection = [
-    {number: 1, name: 'PrimeIcons', icon: Bot},
-    {number: 2, name: 'Colors', icon: Palette},
-    {number: 1, name: 'PrimeFlex', icon: Monitor},
-    {number: 2, name: 'Figma', icon: Pencil}
+    {number: 1, name: 'PrimeIcons', icon: Bot, path: '/utilities-icons'},
+    {number: 2, name: 'Colors', icon: Palette, path: '/utilities-color'},
+    {number: 1, name: 'PrimeFlex', icon: Monitor, path: '/utilities-flex'},
+    {number: 2, name: 'Figma', icon: Pencil, path: '/utilities-figma'}
 ]
 
 const  SixthSection = [
-    {number: 1, name: 'Landing', icon: Globe, hasButton: false},
-    {number: 2, name: 'Auth', icon: User, hasButton: true},
-    {number: 3, name: 'Crud', icon: Pencil, hasButton: false},
-    {number: 4, name: 'Timeline', icon: Calendar, hasButton: false},
-    {number: 5, name: 'Invoice', icon: DollarSign, hasButton: false},
-    {number: 6, name: 'About Us', icon: User, hasButton: false},
-    {number: 7, name: 'Help', icon: CircleHelp, hasButton: false},
-    {number: 8, name: 'Not Found', icon: CircleAlert, hasButton: false},
-    {number: 9, name: 'Empty', icon: Circle, hasButton: false},
-    {number: 10, name: 'FAQ', icon: ShieldQuestion, hasButton: false},
-    {number: 11, name: 'Contact Us', icon: Phone, hasButton: false},
+    {number: 1, name: 'Landing', icon: Globe, hasButton: false, path: '/page-landing'},
+    {number: 2, name: 'Auth', icon: User, hasButton: true, path: '/page-auth'},
+    {number: 3, name: 'Crud', icon: Pencil, hasButton: false, path: '/page-crud'},
+    {number: 4, name: 'Timeline', icon: Calendar, hasButton: false, path: '/page-timeline'},
+    {number: 5, name: 'Invoice', icon: DollarSign, hasButton: false, path: '/page-invoice'},
+    {number: 6, name: 'About Us', icon: User, hasButton: false, path: '/page-about'},
+    {number: 7, name: 'Help', icon: CircleHelp, hasButton: false, path: '/page-help'},
+    {number: 8, name: 'Not Found', icon: CircleAlert, hasButton: false, path: '/page-notfound'},
+    {number: 9, name: 'Empty', icon: Circle, hasButton: false, path: '/page-empty'},
+    {number: 10, name: 'FAQ', icon: ShieldQuestion, hasButton: false, path: '/page-faq'},
+    {number: 11, name: 'Contact Us', icon: Phone, hasButton: false, path: '/page-contact'},
 ]
 
  const  SeventhSection = [
-    {number: 1, name: 'Product Overview', icon: Image},
-    {number: 2, name: 'Product List', icon: List},
-    {number: 3, name: 'New Product', icon: Plus},
-    {number: 4, name: 'Shopping Cart', icon: ShoppingCart},
-    {number: 5, name: 'Checkout Form', icon: SquareCheckBig},
-    {number: 6, name: 'Order History', icon: History},
-    {number: 7, name: 'Order Summary', icon: File},
+    {number: 1, name: 'Product Overview', icon: Image, path: '/ecommerce-overview'},
+    {number: 2, name: 'Product List', icon: List, path: '/ecommerce-list'},
+    {number: 3, name: 'New Product', icon: Plus, path: '/ecommerce-new'},
+    {number: 4, name: 'Shopping Cart', icon: ShoppingCart, path: '/ecommerce-cart'},
+    {number: 5, name: 'Checkout Form', icon: SquareCheckBig, path: '/ecommerce-checkout'},
+    {number: 6, name: 'Order History', icon: History, path: '/ecommerce-history'},
+    {number: 7, name: 'Order Summary', icon: File, path: '/ecommerce-summary'},
 ]
 
 const  EighthSection = [
-    {number: 1, name: 'Home', icon: List},
-    {number: 2, name: 'Image', icon: Plus}
+    {number: 1, name: 'List', icon: List, path: '/user-management-list'},
+    {number: 2, name: 'Create', icon: Plus, path: '/user-management-create'}
 ]
 
 const  NinthSection = [
@@ -104,8 +104,8 @@ const  NinthSection = [
 ]
 
 const  TenthSection = [
-    {number: 1, name: 'Buy Now', icon: ShoppingCart},
-    {number: 2, name: 'Documentation', icon: CircleAlert}
+    {number: 1, name: 'Buy Now', icon: ShoppingCart, path: '/start-buy'},
+    {number: 2, name: 'Documentation', icon: CircleAlert, path: '/start-documentation'}
 ]
 </script>
 <template>
@@ -144,41 +144,41 @@ const  TenthSection = [
             </div>
             <div class="h-auto w-full  pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">PRIME BLOCKS</p>
-                <div v-for="(button, index) in FourthSection" :key="button.number" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75 h-11 items-center mb-2 ">
+                <RouterLink v-for="(button, index) in FourthSection" :key="button.number" :to="button.path" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75 h-11 items-center mb-2 ">
                     <component :is="button.icon" size="16" color="#3F51B5"/>
                     <p class="ml-3 text-gray-600">{{ button.name }}</p>
-                </div>
+                </RouterLink>
             </div>
              <div class="h-auto w-full  pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">UTILITIES</p>
-                <div v-for="(button, index) in FifthSection" :key="button.number" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75 h-11 items-center mb-2 ">
+                <RouterLink v-for="(button, index) in FifthSection" :key="button.number" :to="button.path" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75 h-11 items-center mb-2 ">
                     <component :is="button.icon" size="16" color="#3F51B5"/>
                     <p class="ml-3 text-gray-600">{{ button.name }}</p>
-                </div>
+                </RouterLink>
             </div>
             <div class="h-auto w-full  pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">PAGES</p>
-                <div v-for="(MenuButton, index) in SixthSection" :key="MenuButton.number" class="pl-6 cursor-pointer hover:bg-gray-100 duration-75 h-11 flex items-center mb-2 ">
+                <RouterLink v-for="(MenuButton, index) in SixthSection" :key="MenuButton.number" :to="MenuButton.path" class="pl-6 cursor-pointer hover:bg-gray-100 duration-75 h-11 flex items-center mb-2 ">
                     <component :is="MenuButton.icon" size="16" color="#3F51B5"/>
                     <div class="ml-3 flex justify-between items-center h-8 w-full">
                         <p class="ml-3 text-gray-600">{{ MenuButton.name }}</p>
                         <ChevronDown size="13px" v-if="MenuButton.hasButton" class="mr-8"/>
                     </div>
-                </div>
+                </RouterLink>
             </div>
             <div class="h-auto w-full pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">E-COMMERCE</p>
-                <div v-for="(button, index) in SeventhSection" :key="button.number" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75 h-11 items-center mb-2 ">
+                <RouterLink v-for="(button, index) in SeventhSection" :key="button.number" :to="button.path" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75 h-11 items-center mb-2 ">
                     <component :is="button.icon" size="16" color="#3F51B5"/>
                     <p class="ml-3 text-gray-600">{{ button.name }}</p>
-                </div>
+                </RouterLink>
             </div>
             <div class="h-auto w-full pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">USER MANAGEMENT</p>
-                <div v-for="(button, index) in EighthSection" :key="button.number" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75 h-11 items-center mb-2 ">
+                <RouterLink v-for="(button, index) in EighthSection" :key="button.number" :to="button.path" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75 h-11 items-center mb-2 ">
                     <component :is="button.icon" size="16" color="#3F51B5"/>
                     <p class="ml-3 text-gray-600">{{ button.name }}</p>
-                </div>
+                </RouterLink>
             </div>
             <div class="h-auto w-full pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">HIERARCHY</p>
@@ -192,10 +192,10 @@ const  TenthSection = [
             </div>
             <div class="h-auto w-full  pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">START</p>
-                <div v-for="(button, index) in TenthSection" :key="button.number" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75 h-11 items-center mb-2 ">
+                <RouterLink v-for="(button, index) in TenthSection" :key="button.number" :to="button.path" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75 h-11 items-center mb-2 ">
                     <component :is="button.icon" size="16" color="#3F51B5"/>
                     <p class="ml-3 text-gray-600">{{ button.name }}</p>
-                </div>
+                </RouterLink>
             </div>
         </div>
     </div>

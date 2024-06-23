@@ -20,7 +20,7 @@ provide('toggleMenu', toggleMenu);
 
 <template>
   <div class="flex h-screen overflow-hidden">
-    <div class=" h-full">
+    <div class=" h-full pb-20">
       <LeftPanel></LeftPanel>
     </div>
     <div class="grow overflow-auto bg-indigo-50">
