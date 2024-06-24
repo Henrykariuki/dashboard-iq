@@ -1,5 +1,11 @@
 <script setup>
-import { MoveHorizontal, ArrowDownToLine,Send } from 'lucide-vue-next';
+import { MoveHorizontal, ArrowDownToLine, Send, DollarSign, Euro } from 'lucide-vue-next';
+import BankingCard from './BankingCard.vue'
+import { ref } from 'vue';
+const details = ref([
+    { id: 1, title: 'Debit Card', status: 'Balance', amount: '$2.000,00', serial: '*** *** *** 1412', fraction: '12/24' },
+    { id: 2, title: 'Credit Card', status: 'Debt', amount: '$1.500,00', serial: '*** *** *** 2030', fraction: '10/18' } 
+])
 </script>
 <template>
 <div>
@@ -20,10 +26,43 @@ import { MoveHorizontal, ArrowDownToLine,Send } from 'lucide-vue-next';
         </div>
     </div>
     <div class="banking-dashboard-grid w-full h-auto grid grid-cols-6 pb-20">
-        <div class="border border-black h-52 col-start-1 col-span-2"></div>
-        <div class="border border-black h-52  col-span-2"></div>
-        <div class="border border-black h-52"></div>
-        <div class="border border-black h-52"></div>
+        <div class="border border-black h-52 col-start-1 col-span-2 px-6 bg-indigo-500 text-white">
+            <div class=" border border-black w-auto h-auto  mt-6">
+                <p class="font-bold leading-10 text-lg">Debit Card</p>
+                <p class="font-semibold leading-6">Balance</p>
+                <p class="font-bold text-2xl">$2.000,00</p>
+                <div class="flex justify-between mt-8">
+                    <p>*** *** *** 1421</p>
+                    <p>12/34</p>
+                </div>
+            </div>
+        </div>
+       
+        <div class="border border-black h-52  col-span-2 px-6 bg-white">
+            <div class=" border border-black w-auto h-auto  mt-6">
+                <p class="font-bold leading-10 text-lg">Credit Card</p>
+                <p class="font-semibold leading-6 text-gray-700">Debt</p>
+                <p class="font-bold text-2xl text-indigo-500">$1.600,00</p>
+                <div class="flex justify-between mt-8">
+                    <p class="text-gray-700">*** *** *** 1824</p>
+                    <p class="text-gray-700">10/18</p>
+                </div>
+            </div>
+        </div>
+        <div class="border border-black h-52 flex justify-center bg-white">
+            <div class="currency flex flex-col justify-center items-center">
+                <p class="text-indigo-500 "><DollarSign size="32" /></p>
+                <p class="font-medium mt-4 mb-6">Primary</p>
+                <p class="text-indigo-500 font-bold text-2xl ">$56,000.00</p>
+            </div>
+        </div>
+        <div class="border border-black h-52 flex justify-center bg-white">
+            <div class="currency flex flex-col justify-center items-center">
+                <p class="text-indigo-500 "> <Euro size="32"/></p>
+                <p class="font-medium mt-4 mb-6">Currency</p>
+                <p class="text-indigo-500 font-bold text-2xl ">$20,415.12</p>
+            </div>
+        </div>
         <div class="border border-black h-96 col-span-2"></div>
         <div class="border border-black h-96 col-span-4"></div>
         <div class="border border-black h-60 col-span-3"></div>
