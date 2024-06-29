@@ -1,11 +1,43 @@
 <script setup>
-import { MoveHorizontal, ArrowDownToLine, Send, DollarSign, Euro } from 'lucide-vue-next';
+import { MoveHorizontal, ArrowDownToLine, Send, DollarSign, Euro, Plus } from 'lucide-vue-next';
 import BankingCard from './BankingCard.vue'
+import Transactions from './Transactions.vue'
+import  LineChart  from './LineChart.vue';
 import { ref } from 'vue';
+import RecentTransactions from './RecentTransactions.vue'
+import MonthlyPayments from './MonthlyPayments.vue'
+
 const details = ref([
     { id: 1, title: 'Debit Card', status: 'Balance', amount: '$2.000,00', serial: '*** *** *** 1412', fraction: '12/24' },
     { id: 2, title: 'Credit Card', status: 'Debt', amount: '$1.500,00', serial: '*** *** *** 2030', fraction: '10/18' } 
 ])
+
+const TransactionInfo = ref([
+    {id: 1, image: '/images/airbnb.jpg', name: 'Airbnb', date: '6/16/2024', amount: 300.00},
+    {id: 2, image: '/images/amazon.jpg', name: 'Amazon', date: '10/3/2024', amount: 340.00},
+    {id: 3, image: '/images/nike.jpg', name: 'Nike', date: '8/10/2024', amount: 240.00},
+    {id: 4, image: '/images/starbucks.jpg', name: 'Starbucks', date: '4/5/2024', amount: 100.00},
+    {id: 5, image: '/images/amazon.jpg', name: 'Amazon', date: '1/10/2024', amount: 50.00}
+])
+
+const RecentInfo = ref([
+    {id: 1, image: '/images/james.jpg', name: 'Sean James'},
+    {id: 2, image: '/images/joram.jpg', name: 'Moses Joram'},
+    {id: 3, image: '/images/steve.jpg', name: 'Steve Grace'},
+    {id: 4, image: '/images/james.jpg', name: 'Sean James'},
+    {id: 5, image: '/images/joram.jpg', name: 'Moses Joram'},
+    {id: 6, image: '/images/steve.jpg', name: 'Steve Grace'},
+    
+])
+
+const PaymentsData = ref([
+    {id: 1, name: 'Electric Bill', amount: 85.00, date: '6/27/2024', status: 'COMPLETED', backgroundcolor: 'bg-green-500'},
+    {id: 2, name: 'Water Bill', amount: 60.55, date: '6/30/2024', status: 'COMPLETED', backgroundcolor: 'bg-green-500'},
+    {id: 3, name: 'Gas Bill', amount: 45.25, date: '7/7/2024', status: 'PENDING', backgroundcolor: 'bg-orange-500'},
+    {id: 4, name: 'Internet Bill', amount: 90.45, date: '7/14/2024', status: 'COMPLETED', backgroundcolor: 'bg-green-500'},
+    {id: 5, name: 'Streaming', amount: 75.78, date: '7/20/2024', status: 'PENDING', backgroundcolor: 'bg-orange-500'}     
+])
+
 </script>
 <template>
 <div>
@@ -63,10 +95,40 @@ const details = ref([
                 <p class="text-indigo-500 font-bold text-2xl ">$20,415.12</p>
             </div>
         </div>
-        <div class="border border-black h-96 col-span-2"></div>
-        <div class="border border-black h-96 col-span-4"></div>
-        <div class="border border-black h-60 col-span-3"></div>
-        <div class="border border-black h-60 col-span-3"></div>
+        <div class="border border-black  col-span-2 px-8 bg-white">
+            <div class="text-xl font-semibold w-auto">
+                 Recent Transactions
+            </div>
+           <Transactions v-for="(info, index) in TransactionInfo" :key="info.id" :TransactionInfo="info"/>
+        </div>
+        <div class="border border-black  col-span-4 bg-white">
+            <LineChart></LineChart>
+        </div>
+        <div class="border border-black h-auto col-span-3 bg-white pb-5 px-4">
+            <div class="border border-black flex justify-between py-3">
+                <p class="font-semibold text-xl">Recent Transactions</p>
+                <button class="border border-indigo-500 hover:bg-indigo-50 text-sm font-medium flex items-center py-2 px-3 rounded-md text-indigo-500">
+                    <Plus class="pr-2"/>Add New
+                </button>
+            </div>
+            <div class="w-auto h-60 grid grid-cols-2 gap-4 justify-items-center">
+                <RecentTransactions v-for="(info, index) in RecentInfo" :key="info.id" :RecentInfo="info"/>
+            </div>
+            <div class="border border-black flex justify-between py-6">
+                <input type="text" class="border border-black py-2 px-24 rounded-md border-gray-400 hover:border-indigo-500 duration-75">
+                <button class=" px-5 rounded-md bg-indigo-500 text-white hover:bg-indigo-600 duration-100">Send</button>
+            </div>
+        </div>
+        <div class="border border-black col-span-3 bg-white">
+            <p class="text-xl font-semibold w-auto mt-5 mb-4">Monthly Payments</p>
+            <div class="border-b border-gray-300 flex py-1 justify-between bg-gray-100">
+                <div class=" flex justify-between py-2 w-28">Name</div>
+                <div class=" flex justify-between py-2 w-28">Amount</div>
+                <div class=" flex justify-between py-2 w-28">Date</div>
+                <div class=" flex justify-between py-2 w-28">Status</div>
+            </div>
+            <MonthlyPayments v-for="(info, index) in PaymentsData" :key="info.id" :PaymentsData="info"/>
+        </div>
     </div>
 </div>
 </template>
