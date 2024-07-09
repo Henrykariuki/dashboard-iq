@@ -25,12 +25,12 @@ const  FirstSection = [
 ]
 
 const  SecondSection = [
-    {number: 1, name: 'Blog', icon: MessageCircle, hasButton: true, path: '/apps-blog'},
-    {number: 2, name: 'calender', icon: Calendar, hasButton: false, path: '/apps-calender'},
+    {number: 1, name: 'Blog', icon: MessageCircle, hasButton: true, path: '/apps-blog/Apps/Blog/List'},
+    {number: 2, name: 'calender', icon: Calendar, hasButton: false, path: '/apps-calender/Apps/Calender'},
     {number: 3, name: 'Chat', icon: MessagesSquare, hasButton: false, path: '/apps-chat'},
-    {number: 4, name: 'File', icon: Folder, hasButton: false, path: '/apps-file'},
+    {number: 4, name: 'File', icon: Folder, hasButton: false, path: '/apps-file/Apps/Files'},
     {number: 5, name: 'Mail', icon: Mail, hasButton: true, path: '/apps-mail'},
-    {number: 6, name: 'Task List', icon: SquareCheckBig, hasButton: false, path: '/apps-tasklist'}
+    {number: 6, name: 'Task List', icon: SquareCheckBig, hasButton: false, path: '/apps-tasklist/Apps/Tasklist'}
 ]
 
 
@@ -38,33 +38,33 @@ const  SecondSection = [
 
 
 const  ThirdSection = [
-    {number: 1, name: 'Form Layout', icon: NotebookText, path: '/ui-form'},
-    {number: 2, name: 'Input', icon: SquareCheckBig, path: '/ui-input'},
-    {number: 3, name: 'Float Label', icon: Bookmark, path: '/ui-label'},
-    {number: 4, name: 'Invalid State', icon: CircleAlert, path: '/ui-invalid'},
-    {number: 5, name: 'Button', icon: Box, path: '/ui-button'},
-    {number: 6, name: 'Table', icon: Grid2X2, path: '/ui-table'},
-    {number: 7, name: 'List', icon: List, path: '/ui-list'},
-    {number: 8, name: 'Tree', icon: Share2, path: '/ui-tree'},
-    {number: 9, name: 'Panel', icon: PanelBottomDashed, path: '/ui-panel'},
-    {number: 10, name: 'Overlay', icon: Layers2, path: '/ui-overlay'},
-    {number: 11, name: 'Media', icon: Images, path: '/ui-media'},
-    {number: 12, name: 'Menu', icon: Menu, path: '/ui-menu'},
-    {number: 13, name: 'message', icon: MessageCircle, path: '/ui-message'},
-    {number: 14, name: 'File', icon: File, path: '/ui-file'},
-    {number: 15, name: 'Chart', icon: BarChart3, path: '/ui-chart'},
-    {number: 16, name: 'Misc', icon: Circle, path: '/ui-misc'}
+    {number: 1, name: 'Form Layout', icon: NotebookText, path: '/ui-form/Ui Kit/Form Layout'},
+    {number: 2, name: 'Input', icon: SquareCheckBig, path: '/ui-input/Ui/Input'},
+    {number: 3, name: 'Float Label', icon: Bookmark, path: '/ui-label/Ui/Label'},
+    {number: 4, name: 'Invalid State', icon: CircleAlert, path: '/ui-invalid/Ui/Invalid'},
+    {number: 5, name: 'Button', icon: Box, path: '/ui-button/Ui/Button'},
+    {number: 6, name: 'Table', icon: Grid2X2, path: '/ui-table/Ui/Table'},
+    {number: 7, name: 'List', icon: List, path: '/ui-list/Ui/List'},
+    {number: 8, name: 'Tree', icon: Share2, path: '/ui-tree/Ui/Tree'},
+    {number: 9, name: 'Panel', icon: PanelBottomDashed, path: '/ui-panel/Ui/Panel'},
+    {number: 10, name: 'Overlay', icon: Layers2, path: '/ui-overlay/Ui/Overlay'},
+    {number: 11, name: 'Media', icon: Images, path: '/ui-media/Ui/Media'},
+    {number: 12, name: 'Menu', icon: Menu, path: '/ui-menu/Ui/Menu'},
+    {number: 13, name: 'message', icon: MessageCircle, path: '/ui-message/Ui/Message'},
+    {number: 14, name: 'File', icon: File, path: '/ui-file/Ui/File'},
+    {number: 15, name: 'Chart', icon: BarChart3, path: '/ui-chart/Ui/Chart'},
+    {number: 16, name: 'Misc', icon: Circle, path: '/ui-misc/Ui/Misc'}
 ]
 
 const  FourthSection = [
-    {number: 1, name: 'Free Blocks', icon: Eye, path: '/prime-freeblocks'},
+    {number: 1, name: 'Free Blocks', icon: Eye, path: '/prime-freeblocks/Prime Blocks/Free Blocks'},
     {number: 2, name: 'All Blocks', icon: Globe, path: '/prime-allblocks'},
    
 ]
 
 const  FifthSection = [
-    {number: 1, name: 'PrimeIcons', icon: Bot, path: '/utilities-icons'},
-    {number: 2, name: 'Colors', icon: Palette, path: '/utilities-color'},
+    {number: 1, name: 'PrimeIcons', icon: Bot, path: '/utilities-icons/Utilities/Prime Icons'},
+    {number: 2, name: 'Colors', icon: Palette, path: '/utilities-color/Utilities/Colors'},
     {number: 1, name: 'PrimeFlex', icon: Monitor, path: '/utilities-flex'},
     {number: 2, name: 'Figma', icon: Pencil, path: '/utilities-figma'}
 ]
@@ -126,7 +126,7 @@ const  TenthSection = [
             </div>
             <div class="h-auto w-full pb-3">
                 <p class="text-indigo-500 font-semibold pb-6 pl-6 text-sm">APPS</p>
-                <RouterLink v-for="(tag, index) in SecondSection" :key="tag.number" :to="tag.path" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75  h-11 items-center mb-2 ">
+                <RouterLink v-for="(tag, index) in SecondSection" :key="`apps-${index}`" :to="tag.path" class="pl-6 cursor-pointer flex hover:bg-gray-100 duration-75  h-11 items-center mb-2 ">
                     <component :is="tag.icon" size="16" color="#3F51B5"/>
                     <div class="ml-3 flex justify-between items-center h-8 w-full">
                         <p class="text-gray-600">{{ tag.name }}</p>

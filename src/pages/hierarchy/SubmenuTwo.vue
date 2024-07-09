@@ -1,7 +1,5 @@
 <script setup>
 </script>
 <template>
-    <div class="mb-10">Blog</div>
-
-    
+    <div>Submenu 1.2</div>
 </template>

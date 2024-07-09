@@ -1,6 +1,6 @@
 <script setup>
 import IncomeGrid from './components/IncomeGrid.vue';
-import LeftPanel from './components/LeftPanel.vue';
+import LeftPanelTwo from './components/LeftPanelTwo.vue';
 import MyHeader from './components/MyHeader.vue'
 import SalesGrid from './components/SalesGrid.vue';
 import { ref, provide } from 'vue';
@@ -21,7 +21,7 @@ provide('toggleMenu', toggleMenu);
 <template>
   <div class="flex h-screen overflow-hidden">
     <div class=" h-full pb-20">
-      <LeftPanel></LeftPanel>
+      <LeftPanelTwo/>
     </div>
     <div class="grow overflow-auto bg-indigo-50">
       <header>
