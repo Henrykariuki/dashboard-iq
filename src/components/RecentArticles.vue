@@ -11,7 +11,7 @@ defineProps({
     <div>
         <div class="">
             <hr class="h-1" :class="details.backgroundcolor">
-            <p class="font-medium my-2 text-blue-500">{{ details.title }}</p>
+            <p :class="details.color" class="font-medium my-2 text-blue-500">{{ details.title }}</p>
             <div>
                 <p class="font-medium text-xl">
                     {{ details.subtitle }}

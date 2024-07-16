@@ -42,7 +42,8 @@ const articles = ref([
 const RecentInfo =ref([
     {
         title: 'Animal',
-        subtitle:'Why Earth‘s most beloved creatures are headed toward extinction',
+        color: 'text-blue-500',
+        subtitle:'Why Earth\‘s most beloved creatures are headed toward extinction',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         image: '/images/joram.jpg',
         name: 'Joram Moses',
@@ -51,6 +52,7 @@ const RecentInfo =ref([
     },
     {
         title: 'Oxygen',
+        color: 'text-pink-500',
         subtitle:'Only one-third of tropical rainforests remain intact, study says',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         image: '/images/james.jpg',
@@ -60,6 +62,7 @@ const RecentInfo =ref([
     },
     {
         title: 'Nature',
+        color: 'text-orange-500',
         subtitle:'Does planting a tree really offset your carbon footprint?',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         image: '/images/steve.jpg',
@@ -81,11 +84,11 @@ const RecentInfo =ref([
                     </option>
                 </select>
             </div>
-            <div class="grid grid-cols-3 gap-8" >
+            <div class="grid grid-cols-3 gap-6" >
                   <Article v-for="article in articles" :key="article.id" :article="article" />
             </div>
         </div>
-        <div class=" bg-white rounded-xl px-20 py-28 mt-8">
+        <div class=" bg-white rounded-xl px-28 py-28 mt-8">
             <div>
                 <p class="font-bold text-4xl pb-6">Recent Articles</p>
                 <p class="text-gray-700 text-lg">
