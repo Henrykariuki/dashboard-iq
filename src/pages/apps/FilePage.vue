@@ -1,34 +1,20 @@
-<template>
-  <div class="select-menu">
-    <select v-model="selectedOption">
-      <option v-for="option in options" :key="option" :value="option">
-        {{ option }}
-      </option>
-    </select>
-    <p>Selected: {{ selectedOption }}</p>
-  </div>
-
-</template>
-
 <script setup>
-import { ref } from 'vue'
+import StorageCard from '@/components/StorageCard.vue';
+import { ref } from 'vue'; 
+const storage = ref([
+  {name: 'Cloud Storage', level: 'bg-yellow-100', levelTwo: 'bg-yellow-500', fileNumbers: '412 Files', freeSpace: '1.5GB'},
+  {name: 'Dropbox Storage', level: 'bg-pink-100', levelTwo: 'bg-pink-500', fileNumbers: '286 Files', freeSpace: '2.5GB'},
+  {name: 'Google Drive Storage', level: 'bg-green-100', levelTwo: 'bg-green-500', fileNumbers: '286 Files', freeSpace: '2.5GB'},
+  {name: 'Internal Storage', level: 'bg-indigo-100', levelTwo: 'bg-indigo-500', fileNumbers: '20 Files', freeSpace: '8.2GB'}
+])
 
-// State management
-const selectedOption = ref(null)
-
-// Dropdown options
-const options = ref(['Option 1', 'Option 2', 'Option 3'])
 </script>
-
-<style scoped>
-.select-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-select {
-  margin: 10px 0;
-  padding: 5px;
-}
-</style>
+<template>
+  <div class="px-8">
+    <div class=" border border-black grid grid-cols-4 gap-2">
+      <StorageCard v-for="(info, index) in storage" :key="`id-${index}`" :details="info" />
+      <div class="h-40 bg-white"></div>
+      <div class="bg-white col-span-3"></div>
+    </div>
+  </div>
+</template>

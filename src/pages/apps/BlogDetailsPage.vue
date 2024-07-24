@@ -47,7 +47,7 @@ const comments = ref([
                     <p class="font-bold mb-4">Paul Wall</p>
                 </div>
             </div>
-            <div class="pic-box">
+            <div>
                 <img class="w-full h-96 object-cover rounded-md" src="/images/nairobi.jpg">
             </div>
             <div class="text-gray-700">
@@ -95,11 +95,11 @@ const comments = ref([
                 <p>Post a Comment</p>
                 <div class="flex flex-col gap-4">
                     <div class="relative">
-                        <input class="border border-gray-300 p-2 pl-8 w-full rounded-md hover:indigo-500 hover:border-indigo-500"  type="name" placeholder="Name">
+                        <input class="border border-gray-300 p-2 pl-8 w-full rounded-md hover:border-indigo-500"  type="name" placeholder="Name">
                         <User class="absolute left-1 bottom-3  text-gray-500" size="20"/>
                     </div>
                     <div class="relative">
-                        <input class="border border-gray-300 p-2 pl-8 w-full rounded-md hover:indigo-500 hover:border-indigo-500" type="email" placeholder="Email">
+                        <input class="border border-gray-300 p-2 pl-8 w-full rounded-md  hover:border-indigo-500" type="email" placeholder="Email">
                         <Mail class="absolute text-gray-500 left-1.5 bottom-2.5" size="20"/>
                     </div>
                     <textarea class="border border-gray-300 pb-20 pl-2 pt-2 rounded-md hover:border-indigo-500"  placeholder="Your comment"></textarea>
