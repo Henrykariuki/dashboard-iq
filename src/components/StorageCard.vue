@@ -12,7 +12,7 @@ defineProps({
 <template>
     <div class="bg-white h-44 px-6 flex flex-col gap-4 justify-center rounded-md">
         <div class="flex flex-row gap-16 items-center">
-            <div class=" border border-black font-semibold text-xl ">{{ details.name }}</div>
+            <div class=" font-semibold text-xl ">{{ details.name }}</div>
             <button class="p-3 hover:bg-gray-100 rounded-full"><EllipsisVertical size="14"/></button>
         </div>
         <div :class="details.level" class="h-1.5 rounded-full">
