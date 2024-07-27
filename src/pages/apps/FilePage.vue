@@ -2,7 +2,7 @@
 import StorageCard from '@/components/StorageCard.vue';
 import DoughnutChart from '@/components/DoughnutChart.vue';
 import FolderCard from '@/components/FolderCard.vue';
-import { Search, Upload, Images, Folder, FolderOpen } from 'lucide-vue-next';
+import { Search, Upload, Images, Folder, FolderOpen, File, Video } from 'lucide-vue-next';
 import { ref } from 'vue'; 
 const storage = ref([
   {name: 'Cloud Storage', level: 'bg-yellow-100', levelTwo: 'bg-yellow-500', fileNumbers: '412 Files', freeSpace: '1.5GB'},
@@ -29,6 +29,12 @@ const folders = ref([
   {icon: Folder, name: 'Document Files', number: 4},
   {icon: FolderOpen, name: 'Voices', number: 7},
 ])
+
+const categories = ref([
+  {icon: Images, name: 'Images',  number: 25, background: 'bg-purple-50'},
+  {icon: File, name: 'Documents',  number: 325, background: 'bg-pink-50'},
+  {icon: Video, name: 'videos',  number: 90, background: 'bg-green-50'}
+])
 </script>
 <template>
   <div class="px-8">
@@ -52,12 +58,20 @@ const folders = ref([
           <FolderCard v-for="(info, index) in folders" :key="`id-${index}`" :properties="info"/>
         </div>
       </div>
-      <div class="border border-black h-40">
-        <div class="border border-black">
-          <div>Categories</div>
-          <div></div>
+      <div class="border border-black bg-white flex flex-col gap-8">
+        <div class="border border-black p-6 flex flex-col gap-4">
+          <div class="font-semibold text-xl">Categories</div>
+          <div v-for="(info, index) in categories" :key="`id-${index}`" 
+          class="flex justify-between p-2 rounded-md"
+          :class="`${info.background}`">
+            <div><component :is="info.icon"/></div>
+            <div class="font-medium">{{ info.name }}</div>
+            <div class="font-bold text-lg">{{ info.number }}</div>
+          </div>
         </div>
-        <div class=""></div>
+        <div class="border border-black bg-white rounded-md">
+          <input class="py-24" type="file" name="file">
+        </div>
       </div>
       <div class="border border-black col-span-3 "></div>
 
