@@ -1,5 +1,5 @@
 <script setup>
-import { Inbox, Star, Ban, Bookmark, Send, BookText, Trash2, RotateCcw, EllipsisVertical, Search } from 'lucide-vue-next';
+import {  Star,  Bookmark,  RotateCcw, EllipsisVertical, Search } from 'lucide-vue-next';
 import MailButtons from '@/components/MailButtons.vue';
 import { ref } from 'vue';
 
