@@ -16,7 +16,7 @@ const emailButtons = ref([
 <template>
     <div class="overflow-x-auto px-4 flex flex-col gap-4">
         <div>
-            <button class="text-indigo-500 rounded-md hover:bg-indigo-50 border border-indigo-500 p-2 mb-4">
+            <button class="text-indigo-500 rounded-md hover:bg-indigo-50 border border-indigo-500 py-2 px-4 mb-4">
                 Compose New
             </button>
         </div>
