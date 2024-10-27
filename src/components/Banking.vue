@@ -128,15 +128,7 @@ const PaymentsData = ref([
                 <button class=" px-5 rounded-md bg-indigo-500 text-white hover:bg-indigo-600 duration-100">Send</button>
             </div>
         </div>
-        <div class=" col-span-3 bg-white px-8 pb-4 rounded-xl">
-            <p class="text-xl font-semibold w-auto mt-5 mb-4">Monthly Payments</p>
-            <div class="border-b border-gray-300 flex py-1 px-2 justify-between bg-gray-100">
-                <div class=" flex justify-between py-2 w-28">Name</div>
-                <div class=" flex justify-between py-2 w-28">Amount</div>
-                <div class=" flex justify-between py-2 w-28">Date</div>
-                <div class=" flex justify-between py-2 w-28">Status</div>
-            </div>
-            <MonthlyPayments v-for="(info, index) in PaymentsData" :key="info.id" :PaymentsData="info"/>
+                <MonthlyPayments v-for="(info, index) in PaymentsData" :key="info.id" :PaymentsData="info" />
         </div>
     </div>
 </div>
