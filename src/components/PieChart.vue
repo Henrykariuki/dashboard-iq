@@ -34,11 +34,12 @@ export default {
 };
 </script>
 <template>
-    <div class="h-96 bg-white rounded-lg">
-        <div class="h-10 pl-6 w-auto flex items-center"><p class="font-semibold text-lg py-5">Sales by category</p></div>
-        <Pie class="pb-10" :data="chartData" :options="chartOptions" />
-
+  <div class=" h-96 bg-white rounded-lg">
+    <div class="h-10 pl-6 flex items-center">
+      <p class="font-semibold text-lg py-5">Sales by category</p>
     </div>
+    <Pie class="pb-10" :data="chartData" :options="chartOptions" />
+  </div>
 </template>
 <style scoped>
 </style>

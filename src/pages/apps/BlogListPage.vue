@@ -4,7 +4,7 @@ import { MessageCircle, Share2, Clock3, Info } from 'lucide-vue-next';
 import Article from '@/components/Article.vue'
 import RecentArticles from '../../components/RecentArticles.vue'
 import { SubTitle } from 'chart.js';
-const selectedOption = ref(null)
+const selectedOption = ref('Most Shared')
 const options = ref(['Most Shared', 'Most Commented'])
 
 const articles = ref([

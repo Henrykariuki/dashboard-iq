@@ -25,9 +25,9 @@ import { Plus, MessageCircle, Paperclip, Clock3, EllipsisVertical  } from 'lucid
                 </div>
                 <div class="flex flex-row gap-6 items-center  px-2">
                     <div class="relative w-32 h-12 flex ">
-                        <div class="absolute right-0 bottom-0.5 bg-white p-0.5 rounded-full "><img class="w-10 h-10 object-cover rounded-full" src="/images/joram.jpg"></div>
+                        <div class="absolute right-0 bottom-0.5 z-20 bg-white p-0.5 rounded-full "><img class="w-10 h-10 object-cover rounded-full" src="/images/joram.jpg"></div>
                         <div class="absolute right-7 bottom-0.5 z-10 bg-white p-0.5 rounded-full"><img class="w-10 h-10 object-cover rounded-full" src="/images/james.jpg"></div>
-                        <div class="absolute right-14 bottom-0.5 z-20 bg-white p-0.5 rounded-full"><img class="w-10 h-10 object-cover rounded-full" src="/images/steve.jpg"></div>
+                        <div class="absolute right-14 bottom-0.5  bg-white p-0.5 rounded-full"><img class="w-10 h-10 object-cover rounded-full" src="/images/steve.jpg"></div>
                     </div>
                     <button class="p-3 rounded-full hover:bg-gray-100">
                         <EllipsisVertical size="16"/>

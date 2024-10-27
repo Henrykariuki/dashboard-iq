@@ -22,19 +22,19 @@ const props = defineProps({
 
 </script>
 <template>
-        <div class="flex flex-row justify-between px-4 py-2 cursor-pointer hover:bg-gray-100"
-            @click="onClick">
-            <div class=" flex flex-row gap-1 items-center">
-                <component :is="item.icon" size="16" color="#3F51B5"/>
-                <p class="text-gray-600">{{ item.title }}</p>
-            </div>
-            <ChevronUp v-if="expanded && item.children" size="13"/>
-            <ChevronDown v-else-if="item.children" size="13"/>  
+    <div class=" flex flex-row justify-between px-4 py-2 cursor-pointer hover:bg-gray-100"
+        @click="onClick">
+        <div class=" flex flex-row gap-1 items-center">
+            <component :is="item.icon" size="16" color="#3F51B5"/>
+            <p class="text-gray-600">{{ item.title }}</p>
         </div>
-        <div v-if="item.children && expanded" class="ml-4">
-            <MenuItem v-for="(root, rootIndex) in item.children" 
-            :key="`root-${rootIndex}`" :item="root"/>  
-        </div>
+        <ChevronUp v-if="expanded && item.children" size="13"/>
+        <ChevronDown v-else-if="item.children" size="13"/>  
+    </div>
+    <div v-if="item.children && expanded" class="ml-4">
+        <MenuItem v-for="(root, rootIndex) in item.children" 
+        :key="`root-${rootIndex}`" :item="root"/>  
+    </div>
 </template>
 <style scoped>
 

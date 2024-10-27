@@ -8,7 +8,7 @@ defineProps({
 </script>
 <template>
 <div>
-    <div class="flex w-auto border-b border-gray-300 justify-center flex items-center pt-8 pb-4">
+    <div class="flex border-b border-gray-300 justify-center flex items-center pt-8 pb-4">
         <div class="photo-container">
             <img :src="TransactionInfo.image" class="w-14 h-14">
         </div>

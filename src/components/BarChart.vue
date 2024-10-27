@@ -48,8 +48,8 @@ import Chart from 'chart.js/auto'
 
 </script>
 <template>
-    <div class="col-span-3 h-96 px-8 bg-white rounded-lg">
-      <p class="font-semibold text-lg py-5">Revenue Overview</p>
+    <div class="md:col-span-2 lg:col-span-3 md:h-96 md:px-8 bg-white rounded-lg">
+      <p class="font-semibold text-lg py-5">Revenue Overview</p> 
       <canvas class="h-24 pb-10" id="dashboard-iq"></canvas>
     </div>
 </template>

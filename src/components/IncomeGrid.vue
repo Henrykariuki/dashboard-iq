@@ -21,16 +21,15 @@ const stats = ref([
 ])
 </script>
 <template>
-    <div class="revenue-grid mt-6 w-full px-8">
-        <div class="grid grid-cols-4 gap-8">
-            <StatCard v-for="(stat, index) in stats" :key="index" :stats="stat"/>
-            
-            
-           
+    <div class="revenue-grid  mt-6 md:w-full md:px-8">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 md:gap-8">
+            <StatCard v-for="(stat, index) in stats" :key="index" :stats="stat" />
+
+
+
             <BarChart></BarChart>
             <PieChart></PieChart>
         </div>
-
     </div>
 </template>
 <style scoped>

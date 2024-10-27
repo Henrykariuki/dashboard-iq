@@ -12,12 +12,12 @@ const isMenuOpen = inject('isMenuOpen');
 
 </script>
 <template>
-<div v-if="isMenuOpen" class="w-64 ">
+<div v-if="isMenuOpen" class="w-64 hidden md:block">
     <div class="  text-xl font-medium text-indigo-500">
             DASHBOARD-IQ
     </div>
     <div class="h-screen overflow-y-auto pb-12">
-        <div  v-for= "(menu, index) in menuLinks" :key="index">
+        <div v-for= "(menu, index) in menuLinks" :key="index">
             <div v-if= "menu.children">
                 <p class=" text-indigo-500 font-semibold px-4 py-2 text-sm">{{menu.title}}</p>
                 <div v-for="(child, childIndex) in menu.children" 

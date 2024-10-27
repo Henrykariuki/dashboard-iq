@@ -75,7 +75,8 @@ const comments = ref([
                     </li>
                 </ul>
                 <div class=" p-4 flex justify-between mt-20">
-                    <div v-for="(content, index) in socialButtons" :key="`id-${index}`" class="flex flex-row gap-4">
+                    <div v-for="(content, index) in socialButtons" :key="`id-${index}`"
+                     class="flex flex-row gap-4">
                         <button :class="`${content.hoverClass} ${ content.backgroundcolor}`" class="transition duration-150 border py-2 px-4 flex flex-row gap-2 items-center rounded-md text-white ">
                             <component :is="content.icon" size="16"/>{{ content.name }}
                         </button>
