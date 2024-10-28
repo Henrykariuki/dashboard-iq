@@ -2,6 +2,8 @@
 import { Clock3, MessagesSquare, Eye, Twitter, Facebook, Pencil, User, Mail  } from 'lucide-vue-next';
 import Comments from '../../components/Comments.vue'
 import { ref } from 'vue';
+
+
 const content =ref([
     {one: 'First, a disclaimer - the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words per minute and your writing skills are sharp. From the seed of the idea to finally hitting “Publish,” you might spend several days or maybe even a week “writing” a blog post, but it‘s important to spend those vital hours planning your post and even thinking about Your Post(yes, thinking counts as working if you‘re a blogger) before you actually write it.'},
     {two: 'There‘s an old maxim that states, “No fun for the writer, no fun for the reader.”No matter what industry you‘re working in, as a blogger, you should live and die by this statement.'},
@@ -23,24 +25,24 @@ const comments = ref([
 ])
 </script>
 <template>
-    <div class="px-8">
+    <div class="px-4 md:px-8">
         <div class="bg-white pb-40 pt-10 px-6">
-            <div class=" flex justify-between">
-                <div>
+            <div class="mb-4 flex flex-col md:flex-row md:justify-between">
+                <div class="order-last md:order-1 flex flex-col items-center">
                     <p class="font-semibold text-xl">How To Get Started Tutorial</p>
                     <div class=" flex justify-between items-center mt-6">
                         <div class="px-2 py-1 rounded-md border border-gray-300 flex flex-row gap-2 items-center">
                             <Clock3 size="16" color="#3F51B5" />4d ago
                         </div>
                         <div class="px-2 py-1 rounded-md border border-gray-300 flex flex-row gap-2 items-center">
-                            <MessagesSquare size="16" color="#3F51B5"/>12
+                            <MessagesSquare size="16" color="#3F51B5" />12
                         </div>
                         <div class="px-2 py-1 rounded-md border border-gray-300 flex flex-row gap-2 items-center">
                             <Eye size="16" color="#3F51B5" />120
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="md:order-last flex flex-col items-center">
                     <div class=" flex justify-center items-center mb-4">
                         <img class="w-16 h-16 rounded-full object-cover " src="/images/image.jpg">
                     </div>
@@ -59,30 +61,32 @@ const comments = ref([
                     <p class="mb-4">{{ paragraph.four }}</p>
                     <p class="mb-4 font-semibold text-2xl text-black">{{ paragraph.subtitle }}</p>
                 </div>
-                    
+
                 <ul class="leading-10 text-xl text-gray-500">
                     <li>
                         Fermentum neque odio laoreet morbi sit. Venenatis in quam ut non.
                     </li>
                     <li>
-                        Enim in porta facilisi a vulputate fermentum, morbi. Consequat, id praesent tristique euismod pellentesque
+                        Enim in porta facilisi a vulputate fermentum, morbi. Consequat, id praesent tristique euismod
+                        pellentesque
                     </li>
                     <li>
                         Implements This is an external link
                     </li>
                     <li>
-                        Scelerisque ultricies tincidunt lectus faucibus non morbi sed nibh varius. Quam a, habitasse egestaseleifend.
+                        Scelerisque ultricies tincidunt lectus faucibus non morbi sed nibh varius. Quam a, habitasse
+                        egestaseleifend.
                     </li>
                 </ul>
-                <div class=" p-4 flex justify-between mt-20">
-                    <div v-for="(content, index) in socialButtons" :key="`id-${index}`"
-                     class="flex flex-row gap-4">
-                        <button :class="`${content.hoverClass} ${ content.backgroundcolor}`" class="transition duration-150 border py-2 px-4 flex flex-row gap-2 items-center rounded-md text-white ">
-                            <component :is="content.icon" size="16"/>{{ content.name }}
+                <div class=" p-4 flex flex-col gap-4 md:flex-row md:justify-between md:mt-20">
+                    <div v-for="(content, index) in socialButtons" :key="`id-${index}`">
+                        <button :class="`${content.hoverClass} ${ content.backgroundcolor}`"
+                            class="w-full transition duration-150 border py-2 px-4 flex md:flex-row gap-2 items-center rounded-md text-white ">
+                            <component :is="content.icon" size="16" />{{ content.name }}
                         </button>
                     </div>
                 </div>
-            </div >
+            </div>
             <div>
                 <div class=" w-40 h-10 flex justify-around items-center mb-6 mt-20">
                     <p class="font-bold text-lg">Comments</p>
@@ -96,18 +100,22 @@ const comments = ref([
                 <p>Post a Comment</p>
                 <div class="flex flex-col gap-4">
                     <div class="relative">
-                        <input class="border border-gray-300 p-2 pl-8 w-full rounded-md hover:border-indigo-500"  type="name" placeholder="Name">
-                        <User class="absolute left-1 bottom-3  text-gray-500" size="20"/>
+                        <input class="border border-gray-300 p-2 pl-8 w-full rounded-md hover:border-indigo-500"
+                            type="name" placeholder="Name">
+                        <User class="absolute left-1 bottom-3  text-gray-500" size="20" />
                     </div>
                     <div class="relative">
-                        <input class="border border-gray-300 p-2 pl-8 w-full rounded-md  hover:border-indigo-500" type="email" placeholder="Email">
-                        <Mail class="absolute text-gray-500 left-1.5 bottom-2.5" size="20"/>
+                        <input class="border border-gray-300 p-2 pl-8 w-full rounded-md  hover:border-indigo-500"
+                            type="email" placeholder="Email">
+                        <Mail class="absolute text-gray-500 left-1.5 bottom-2.5" size="20" />
                     </div>
-                    <textarea class="border border-gray-300 pb-20 pl-2 pt-2 rounded-md hover:border-indigo-500"  placeholder="Your comment"></textarea>
+                    <textarea class="border border-gray-300 pb-20 pl-2 pt-2 rounded-md hover:border-indigo-500"
+                        placeholder="Your comment"></textarea>
                 </div>
                 <div class="flex justify-between mt-4">
                     <div></div>
-                    <button class="rounded-md px-4 py-2 bg-indigo-500 hover:bg-indigo-600 hover:duration-150 text-white text-center">
+                    <button
+                        class="rounded-md px-4 py-2 bg-indigo-500 hover:bg-indigo-600 hover:duration-150 text-white text-center">
                         Post Comment
                     </button>
                 </div>

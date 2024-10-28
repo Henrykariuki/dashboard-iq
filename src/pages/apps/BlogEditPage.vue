@@ -14,13 +14,13 @@ const buttons = ref([
 ])
 </script>
 <template>
-    <div class="px-8">
+    <div class="px-4 md:px-8">
         <div class=" rounded-md bg-white px-6 py-5">
-            <div class=" grid grid-cols-3 gap-8">
-                <div class=" col-span-2 flex flex-col gap-8">
+            <div class=" grid lg:grid-cols-3 gap-8">
+                <div class=" lg:col-span-2 flex flex-col gap-8">
                     <div class="text-lg font-bold">Create a new post</div>
                     <div class=" flex flex-col gap-4">
-                        <input class="border border-gray-300 w-full pl-48 py-40 rounded-md" type="file" name="file">
+                        <input class="border border-gray-300 w-full pl-16 lg:pl-48 py-40 rounded-md" type="file" name="file">
                         <input class="border border-gray-300 hover:border-indigo-500 focus:outline-none w-full pl-2 py-2 rounded-md" placeholder="Title" type="text">
                         <input class="border border-gray-300 hover:border-indigo-500 focus:outline-none w-full pl-2 pb-28 pt-2 rounded-md" placeholder="Content">
                     </div>

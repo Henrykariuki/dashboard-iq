@@ -37,7 +37,7 @@ return route.path.replace('/', '')
         </div>
       </div>
     </div>
-    <div class="pl-4 md:hidden h-6 flex items-center font-semibold text-gray-600">{{ breadcrumbs }}</div>
+    <div class="pl-9 mb-2 md:hidden h-6 flex items-center font-semibold text-gray-600">{{ breadcrumbs }}</div>
   </div>
 </template>
 <style scoped>

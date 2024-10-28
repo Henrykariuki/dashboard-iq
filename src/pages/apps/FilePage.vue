@@ -57,7 +57,7 @@ const fileInfo = ref([
 ])
 </script>
 <template>
-  <div class="px-8">
+  <div class="px-4 md:px-8">
     <div class="grid grid-cols-4  gap-8 pb-40">
       <StorageCard v-for="(info, index) in storage" :key="`id-${index}`" :details="info" />
       <div class=" flex flex-col rounded-lg  gap-6 items-center py-6 bg-white">

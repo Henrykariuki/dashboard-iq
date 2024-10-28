@@ -9,7 +9,7 @@ defineProps({
 </script>
 <template>
     <div>
-        <div class="">
+        <div>
             <hr class="h-1" :class="details.backgroundcolor">
             <p :class="details.color" class="font-medium my-2 text-blue-500">{{ details.title }}</p>
             <div>

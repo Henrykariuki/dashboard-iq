@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { MessageCircle, Share2, Clock3, Info } from 'lucide-vue-next';
 import Article from '@/components/Article.vue'
 import RecentArticles from '../../components/RecentArticles.vue'
-import { SubTitle } from 'chart.js';
+
 const selectedOption = ref('Most Shared')
 const options = ref(['Most Shared', 'Most Commented'])
 
@@ -76,26 +76,26 @@ const RecentInfo =ref([
 <template>
     <div class="px-8 pb-10">
         <div class="border border-gray-300 rounded-xl bg-white w-full pt-8 pb-28 px-10">
-            <div class="border-y border-gray-200 bg-gray-50 mb-4 py-5 px-4 flex justify-between items-center">
+            <div class="md:border-y md:border-slate-300 md:bg-gray-50 mb-4 py-5 md:px-4 flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
                 <p class="font-semibold text-xl">Articles</p>
-                <select class="w-52 py-2 rounded-md px-2 border border-gray-300 hover:border-indigo-500" v-model="selectedOption">
+                <select class="md:w-52  py-2 rounded-md px-2 border border-gray-300 hover:border-indigo-500" v-model="selectedOption">
                     <option v-for="option in  options" :key="option" :value="option">
                         {{ option }}
                     </option>
                 </select>
             </div>
-            <div class="grid grid-cols-3 gap-6" >
+            <div class="grid md:grid-cols-3 gap-6" >
                   <Article v-for="article in articles" :key="article.id" :article="article" />
             </div>
         </div>
-        <div class=" bg-white rounded-xl px-28 py-28 mt-8">
+        <div class=" bg-white rounded-xl px-10 md:px-28 py-28 mt-8">
             <div>
                 <p class="font-bold text-4xl pb-6">Recent Articles</p>
                 <p class="text-gray-700 text-lg">
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
-            <div class="grid grid-cols-3 gap-10 mt-10">
+            <div class="grid md:grid-cols-3 gap-10 mt-10">
                 <RecentArticles v-for="(info, index) in RecentInfo" :key="`id-${index}`" :details="info"/>
             </div>
         </div>

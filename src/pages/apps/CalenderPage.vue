@@ -31,7 +31,7 @@ const calendarOptions = ref({
 });
 </script>
 <template>
-  <div class="px-8 pb-8">
+  <div class="lg:px-8 lg:pb-8">
     <div class="bg-white rounded-md ">
         <FullCalendar :options="calendarOptions" />
     </div>

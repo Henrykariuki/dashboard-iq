@@ -19,8 +19,8 @@ const notify = ref([
 
 </script>
 <template>
-    <div class="px-8 pb-6">
-        <div class="grid grid-cols-3 gap-6">
+    <div class="px-4 md:px-8 pb-6">
+        <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-white rounded-lg">
                 <div class=" py-10 border-b border-gray-300 flex flex-col items-center gap-4">
                     <div>
@@ -37,7 +37,7 @@ const notify = ref([
                     </div>
                 </div>
             </div>
-            <div class=" relative bg-white col-span-2 rounded-lg">
+            <div class=" relative bg-white md:col-span-2 rounded-lg">
                 <div class="flex absolute left-0 right-0 justify-between border-b border-gray-300 p-10">
                     <div class="flex flex-row gap-4">
                         <div>
@@ -65,20 +65,20 @@ const notify = ref([
                         </div>
                         <div class="flex flex-col gap-4">
                             <div class="font-semibold">{{ info.name }}</div>
-                            <div class="text-gray-600 font-medium border border-gray-300 py-3 px-2 w-80 rounded-md">
+                            <div class="text-gray-600 font-medium border border-gray-300 py-3 px-2 md:w-80 rounded-md">
                                 {{ info.text }}
                             </div>
                             <div class="text-gray-600 flex flex-row gap-1 items-center">23:25<Check color="green" size="17"/></div>
-                            <div :class="info.notifybackground" class="p-4 ml-10 rounded-md w-96 ">{{ info.textTwo }}</div>
+                            <div :class="info.notifybackground" class="p-4 ml-10 rounded-md md:w-96 ">{{ info.textTwo }}</div>
                         </div>
                     </div>
                 </div>
                 <div class="py-32"></div>
-                <div class="grid grid-cols-3 gap-4 items-center border-t border-gray-300 p-10">
+                <div class="grid md:grid-cols-3 gap-4 items-center border-t border-gray-300 p-10">
                     <div class="col-span-2">
                         <input class="border border-gray-300 p-2 w-full rounded-md hover:border-indigo-500" placeholder="Type a message" type="text" name="text">
                     </div>
-                    <div class="flex flex-row gap-4 items-center ">
+                    <div class="flex flex-row justify-between md:gap-4 items-center ">
                         <button class="bg-gray-500 py-4 px-5 rounded-md text-yellow-500"><Smile size="16" /></button>
                         <button class="bg-indigo-500 hover:bg-indigo-600 flex flex-row gap-1 text-white items-center py-3 px-4 rounded-md">
                             <Send size="16" />Send

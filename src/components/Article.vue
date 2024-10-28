@@ -8,9 +8,9 @@ defineProps({
 })
 </script>
 <template>
-    <div class=" bg-gray-100  rounded-md flex flex-col justify-between max-w-96">
+    <div class=" bg-gray-100  rounded-md flex flex-col justify-between md:max-w-96">
         <div class="photo-container relative">
-            <img class="w-96 rounded-md" :src="article.image">
+            <img class="w-full rounded-md" :src="article.image">
             <div class="profile-container absolute -bottom-7 right-6 ">
                 <img class="w-16 h-16 rounded-full object-cover" :src="article.profilePic">
             </div>
