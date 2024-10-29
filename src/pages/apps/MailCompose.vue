@@ -4,13 +4,13 @@ import Editor from '@tinymce/tinymce-vue'
 import { ChevronLeft, UserRound, Pencil, Send } from 'lucide-vue-next';
 </script>
 <template>
-    <div class="p-8 ">
+    <div class=" px-4 md:p-8 ">
         <div class="bg-white p-8 rounded-lg">
-            <div class="grid grid-cols-6 gap-8">
+            <div class="grid md:grid-cols-6 gap-8">
                 <div>
                     <MailButtons/>
                 </div>
-                <div class=" pb-20 col-span-5">
+                <div class=" pb-20 md:col-span-5">
                     <div class=" flex flex-row gap-4 items-center mb-8">
                         <button class="border border-gray-300 p-2 rounded-md hover:bg-gray-50"><ChevronLeft/></button>
                         <p class="font-bold text-lg">Compose Message</p>
@@ -34,8 +34,8 @@ import { ChevronLeft, UserRound, Pencil, Send } from 'lucide-vue-next';
                                 }"
                             />
                         </div>
-                        <div class="flex justify-end mt-10">
-                            <button class="bg-indigo-500 text-white flex flex-row gap-4 items-center p-2 rounded-md hover:bg-indigo-600 ">
+                        <div class="flex  md:justify-end mt-10">
+                            <button class="bg-indigo-500 text-white w-full flex flex-row gap-4 items-center p-2 rounded-md hover:bg-indigo-600 ">
                             <Send size="16"/>
                             Send Message
                             </button>

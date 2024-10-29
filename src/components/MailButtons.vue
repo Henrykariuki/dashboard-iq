@@ -16,17 +16,20 @@ const emailButtons = ref([
 <template>
     <div class="overflow-x-auto px-4 flex flex-col gap-4">
         <div>
-            <button class="text-indigo-500 rounded-md hover:bg-indigo-50 border border-indigo-500 py-2 px-4 mb-4">
+            <button class=" w-full text-indigo-500 rounded-md hover:bg-indigo-50 border border-indigo-500 py-2 px-4 mb-4">
                 Compose New
             </button>
         </div>
-        <div v-for="(info, index) in emailButtons" :key="`id-${index}`">
-            <button :class="`${info.backgroundColor} ${info.textColor} ${info.bgHover}`" 
-            class=" p-2 flex items-center flex-row gap-4 rounded-md">
-                <component :is="info.icon" size="16"/>
-                <p class="font-medium">{{ info.name }}</p>
-                <div class=" text-black py-0.5 px-2.5 rounded-full bg-indigo-50">{{ info.number }}</div>
-            </button>
+        <div class="flex flex-row md:flex-col ">
+            <div v-for="(info, index) in emailButtons" :key="`id-${index}`">
+                <button :class="`${info.backgroundColor} ${info.textColor} ${info.bgHover}`"
+                    class=" p-2 flex items-center flex-row gap-4 rounded-md">
+                    <component :is="info.icon" size="16" />
+                    <p class="font-medium hidden md:block">{{ info.name }}</p>
+                    <div class=" text-black py-0.5 px-2.5 rounded-full bg-indigo-50 hidden md:block">{{ info.number }}
+                    </div>
+                </button>
+            </div>
         </div>
     </div>
 </template>

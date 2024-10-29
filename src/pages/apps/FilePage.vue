@@ -57,34 +57,35 @@ const fileInfo = ref([
 ])
 </script>
 <template>
-  <div class="px-4 md:px-8">
-    <div class="grid grid-cols-4  gap-8 pb-40">
+  <div class="p-4 md:px-8">
+    <div class="grid md:grid-cols-4  gap-8 pb-40">
       <StorageCard v-for="(info, index) in storage" :key="`id-${index}`" :details="info" />
       <div class=" flex flex-col rounded-lg  gap-6 items-center py-6 bg-white">
         <DoughnutChart/>
-        <div class="flex flex-row gap-4" >
+        <div class="flex flex-row gap-4">
           <div v-for="(info, index) in buttons" :key="`id-${index}`">
-            <button 
-            class="flex flex-row items-center rounded-md gap-2 p-2"
-            :class="`${info.buttonBackground} ${info.buttonHover} ${info.textColor} ${info.buttonBorder}`">
-              <component :is="info.icon" size="16"/> <p>{{ info.name }}</p>
+            <button class="flex flex-row items-center rounded-md gap-2 p-2"
+              :class="`${info.buttonBackground} ${info.buttonHover} ${info.textColor} ${info.buttonBorder}`">
+              <component :is="info.icon" size="16" />
+              <p>{{ info.name }}</p>
             </button>
           </div>
         </div>
       </div>
-      <div class="bg-white rounded-lg col-span-3 py-8 px-6">
+      <div class="bg-white rounded-lg md:col-span-3 py-8 px-6">
         <p class="font-semibold text-xl mb-4">Folders</p>
-        <div class="grid grid-cols-3 gap-6">
-          <FolderCard v-for="(info, index) in folders" :key="`id-${index}`" :properties="info"/>
+        <div class="grid md:grid-cols-3 gap-6">
+          <FolderCard v-for="(info, index) in folders" :key="`id-${index}`" :properties="info" />
         </div>
       </div>
       <div class=" flex flex-col gap-8">
         <div class=" rounded-lg bg-white p-6 flex flex-col gap-4">
           <div class="font-semibold text-xl">Categories</div>
-          <div v-for="(info, index) in categories" :key="`id-${index}`" 
-          class="flex justify-between p-2 rounded-md"
-          :class="`${info.background}`">
-            <div><component :is="info.icon"/></div>
+          <div v-for="(info, index) in categories" :key="`id-${index}`" class="flex justify-between p-2 rounded-md"
+            :class="`${info.background}`">
+            <div>
+              <component :is="info.icon" />
+            </div>
             <div class="font-medium">{{ info.name }}</div>
             <div class="font-bold text-lg">{{ info.number }}</div>
           </div>
@@ -93,26 +94,35 @@ const fileInfo = ref([
           <input class="py-24 px-1" type="file" name="file">
         </div>
       </div>
-      <div class="bg-white rounded-lg col-span-3 px-8 pt-6 pb-14">
-        <div class="font-semibold text-xl mb-4">Recent Uploads</div>
-        <div  class="grid grid-cols-4">
-          <div v-for="(info, index) in propertyNames" :key="`id-${index}`">
-            <div :class="`${info.propertyHover} ${info.propertyBackground}`" class="border-b border-gray-300 flex flex-row gap-2 items-center px-4 h-12">
-              <p class="font-bold text-gray-800">{{ info.name }}</p>
-              <component :is="info.icon" size="18"/>
-            </div> 
+      <div class="overflow-x-auto  md:col-span-3">
+        <div class="bg-white min-w-[1024px]  rounded-lg  md:px-8 pt-6 pb-14">
+          <div class="font-semibold text-xl mb-4">Recent Uploads</div>
+          <div class="grid  grid-cols-4">
+            <div v-for="(info, index) in propertyNames" :key="`id-${index}`">
+              <div :class="`${info.propertyHover} ${info.propertyBackground}`"
+                class="border-b border-gray-300 flex flex-row gap-2 items-center px-4 h-12">
+                <p class="font-bold text-gray-800">{{ info.name }}</p>
+                <component :is="info.icon" size="18" />
+              </div>
+            </div>
           </div>
-        </div>
-        <div v-for="(info, index) in fileInfo" :key="`id-${index}`" class="border-b border-gray-300 grid grid-cols-4">
-          <div class=" py-6 flex flex-row gap-2 items-center px-4">
-            <div class="text-indigo-500"><component :is="info.icon" size="16"/></div>
-            <p class="text-gray-800">{{ info.name }}</p>
-          </div>
-          <div class="  px-4 flex items-center text-gray-800">{{ info.date }}</div>
-          <div class="  px-8 flex items-center text-gray-800">{{ info.fileSize }}</div>
-          <div class="  flex flex-row gap-6 justify-center items-center">
-            <button class=" p-2 rounded-full text-red-500 hover:bg-red-50"><X size="16"/></button>
-            <button class=" p-2 rounded-full text-indigo-500 hover:bg-indigo-50"><Search size="16"/></button>
+          <div v-for="(info, index) in fileInfo" :key="`id-${index}`" class="border-b border-gray-300 grid grid-cols-4">
+            <div class=" py-6 flex flex-row gap-2 items-center px-4">
+              <div class="text-indigo-500">
+                <component :is="info.icon" size="16" />
+              </div>
+              <p class="text-gray-800">{{ info.name }}</p>
+            </div>
+            <div class="  px-4 flex items-center text-gray-800">{{ info.date }}</div>
+            <div class="  px-8 flex items-center text-gray-800">{{ info.fileSize }}</div>
+            <div class="  flex flex-row gap-6 justify-center items-center">
+              <button class=" p-2 rounded-full text-red-500 hover:bg-red-50">
+                <X size="16" />
+              </button>
+              <button class=" p-2 rounded-full text-indigo-500 hover:bg-indigo-50">
+                <Search size="16" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
